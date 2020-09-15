@@ -73,13 +73,22 @@ void print( unordered_set<T> uset ) {
     cout<<"\n";
 }
 
+template< typename T, size_t N>  // vector tuple array
+void print(vector<tuple<T, T, T>> (&a)[N]){
+  for(int i = 0; i < N; i++){
+    for(auto &j : a[i]){
+      cout  << "{" << get<0>(j) << "," << get<1>(j) << "," << get<2>(j) << "}, " ;
+    }
+    cout << '\n';
+  }
+}
 
 int main(){
   //cout << floor(log10(19232365) + 1); // use for finding digits in a number
   // int a[2][2] = {{1,2},{2,3}};
   // print(a);
   // vector<pair<int, int>> a[2] = {{{1,2},{3,4}},{{2,3}}};
-  vector<vector<int>> v = {{5,4},{1,2,3}};
-  print(v);
+  vector<tuple<int, int, int>> a[2] = {{{1,5,4},{1,2,3}},{{0,0,0}}};
+  print(a);
   return 0;
 }

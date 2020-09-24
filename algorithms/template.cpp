@@ -28,6 +28,14 @@ void print(vector<T> (&a)[N]){
   }
 }
 
+
+template<typename T> // vector pair
+void print(vector<pair<T, T>> &a){
+  for(auto &i : a){
+    cout << i.first << " " << i.second <<'\n';
+  }
+}
+
 template<typename T, size_t N> // vector pair array
 void print(vector<pair<T, T>> (&a)[N]){
   for(int i = 0; i < N; i++){

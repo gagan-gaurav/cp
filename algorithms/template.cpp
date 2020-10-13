@@ -46,6 +46,15 @@ void print(vector<pair<T, T>> (&a)[N]){
   }
 }
 
+template<typename T> //2d vector pair
+void print(vector<vector<pair<int, int>>> (&v)){
+  for(auto &i : v){
+    for(auto &j : i){
+      cout <<'('<< j.first << " " << j.second <<')'<<'\n';
+    }
+  }
+}
+
 template< typename T, size_t N, size_t M > // 2d array
 void print( T(&theArray)[N][M]  ) {
     for ( int x = 0; x < N; x ++ ) {

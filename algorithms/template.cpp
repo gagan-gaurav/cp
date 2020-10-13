@@ -47,11 +47,12 @@ void print(vector<pair<T, T>> (&a)[N]){
 }
 
 template<typename T> //2d vector pair
-void print(vector<vector<pair<int, int>>> (&v)){
+void print(vector<vector<pair<T, T>>> &v){
   for(auto &i : v){
     for(auto &j : i){
-      cout <<'('<< j.first << " " << j.second <<')'<<'\n';
+      cout <<'('<< j.first << " " << j.second <<')'<<',';
     }
+    cout << '\n';
   }
 }
 

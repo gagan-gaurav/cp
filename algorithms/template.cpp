@@ -28,8 +28,8 @@ void print(vector<T> (&a)[N]) {
     }
 }
 
-template <typename T>  // vector pair
-void print(vector<pair<T, T>> &a) {
+template <typename T, typename U>  // vector pair
+void print(vector<pair<T, U>> &a) {
     for (auto &i : a) {
         cout << i.first << " " << i.second << '\n';
     }
@@ -45,8 +45,8 @@ void print(vector<pair<T, T>> (&a)[N]) {
     }
 }
 
-template <typename T>  //2d vector pair
-void print(vector<vector<pair<T, T>>> &v) {
+template <typename T, typename U>  //2d vector pair
+void print(vector<vector<pair<T, U>>> &v) {
     for (auto &i : v) {
         for (auto &j : i) {
             cout << '(' << j.first << " " << j.second << ')' << ',';

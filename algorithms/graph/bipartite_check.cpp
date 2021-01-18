@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//basically if the graph coloring is possible using two colors.
+
 vector<vector<int>> adj;
 
 void bipartite_check(int n) {

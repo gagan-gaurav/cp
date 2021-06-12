@@ -2,7 +2,7 @@
 using namespace std;
 #define MAXN 5
 
-int t[20];  // 4*n size of memory needed in worst case
+int t[32];  // 4*n size of memory needed in worst case
 
 void build(int a[], int v, int tl, int tr) {
     if (tl == tr) {
@@ -39,10 +39,10 @@ void update(int v, int tl, int tr, int pos, int new_val) {
 }
 
 int main() {
-    int n = 5;
-    int a[5] = {1, 3, -2, 8, -7};
-    // build(a, 1, 0, n - 1);
-    // cout << sum(1, 0, n - 1, 0, 1) << '\n';
+    int n = 8;
+    int a[8] = {3, 1, 2, 5, 6, 4, 3, 2};
+    build(a, 1, 0, n - 1);
+    cout << sum(1, 0, n - 1, 4, 6) << '\n';
     // update(1, 0, n - 1, 1, 10);
     // cout << sum(1, 0, n - 1, 0, 2) << '\n';
     return 0;

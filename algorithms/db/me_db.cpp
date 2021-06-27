@@ -120,22 +120,30 @@ void debug_out(Head(&H)[N], Tail(&... T)[M]) {
 #endif
 
 
-
 int main(){
 	fast io
-    string s = "ez peezy";
+#ifdef LOCAL
+auto begin = std::chrono::high_resolution_clock::now();
+#endif
+
     vector<int> v = {2, 3, 4, 5, 6, 7};
     vector<int> p[3] = {{1, 2}, {2}, {2, 3, 4}};
-    // int a[4] = {2, 3, 4, 5};
     int a[2][2][3] = {{{1, 4, 2}, {4, 5, 3}}, {{12, 45, 3}, {2, 3, 2}}};
     pair<int, int> k = {6, 7};
     set<int> u = {2, 3, 4};
     vector<int> l = {2, 3};
+
 	// vectors  can be debugged with other containers
     debug(v, u, k);
 
 	// arrays in any form should be debugged only with other arrays or alone
     debug(p);
     debug(a);
+
+#ifdef LOCAL
+auto end = std::chrono::high_resolution_clock::now();
+cout << endl <<setprecision(4) << fixed;
+cout << "Execution time: " << std::chrono::duration_cast<std::chrono::duration<double>>(end - begin).count() << " seconds" << endl;
+#endif
     return 0;
 }

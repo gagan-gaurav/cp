@@ -117,7 +117,7 @@ void debug_out(Head(&H)[N], Tail(&... T)[M]) {
 #ifdef LOCAL
 #define debug(...) cerr << "[" << #__VA_ARGS__ << "]:", debug_out(__VA_ARGS__)
 #else
-#define debug(...) 42
+#define debug(...) 0
 #endif
 
 
@@ -134,11 +134,11 @@ auto begin = std::chrono::high_resolution_clock::now();
     set<int> u = {2, 3, 4};
     vector<int> l = {2, 3};
     string s = "WDASDAS";
+    const char q[] = "sdas";
+    // vectors  can be debugged with other containers
+    debug(v, u, k, s, q);
 
-	// vectors  can be debugged with other containers
-    debug(v, u, k, s);
-
-	// arrays in any form should be debugged only with other arrays or alone
+    // arrays in any form should be debugged only with other arrays or alone
     debug(p);
     debug(a);
 

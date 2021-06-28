@@ -19,12 +19,13 @@ string to_string(tuple<A, B, C> p);
 template <typename A, typename B, typename C, typename D>
 string to_string(tuple<A, B, C, D> p);
 
-string to_string(const string& s) {
+string to_string(string& s) {// const string& replaced with string& 
     return '"' + s + '"';
 }
 
 string to_string(const char* s) {
-    return to_string((string)s);
+    string str = s;
+    return to_string(str);
 }
 
 string to_string(bool b) {
@@ -132,13 +133,17 @@ auto begin = std::chrono::high_resolution_clock::now();
     pair<int, int> k = {6, 7};
     set<int> u = {2, 3, 4};
     vector<int> l = {2, 3};
+    string s = "WDASDAS";
 
 	// vectors  can be debugged with other containers
-    debug(v, u, k);
+    debug(v, u, k, s);
 
 	// arrays in any form should be debugged only with other arrays or alone
     debug(p);
     debug(a);
+
+    
+    
 
 #ifdef LOCAL
 auto end = std::chrono::high_resolution_clock::now();

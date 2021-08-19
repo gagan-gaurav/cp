@@ -16,7 +16,7 @@ struct Query{
 	}
 };
 
-vector<int> ma(vector<Query> queries){
+vector<int> mo(vector<Query> queries){
 	vector<int> answers(queries.size());
 	sort(queries.begin(), queries.end());
 

@@ -3,35 +3,34 @@ using namespace std;
 
 int n, m;
 vector<vector<int>> adj;
-vector<char> color;
+vector<bool> visited;
 vector<int> parent;
 int cycle_start, cycle_end;
 
 bool dfs(int v, int par) {
-    color[v] = 1;
+    visited[v] = true;
     for (auto &i : adj[v]) {
         if (i == par) continue;
-        if (color[i] == 0) {
+        if (!visited[i]) {
             parent[i] = v;
             if (dfs(i, parent[i]))
                 return true;
-        } else if (color[i] == 1) {
+        } else{
             cycle_start = i;
             cycle_end = v;
             return true;
         }
     }
-    color[v] = 2;
     return false;
 }
 
 void find_cycle() {
-    color.assign(n + 1, 0);
+    visited.assign(n + 1, false);
     parent.assign(n + 1, -1);
     cycle_start = -1;
 
     for (int i = 0; i <= n; i++) {
-        if (color[i] == 0 && dfs(i, parent[i]))
+        if (!visited[i] && dfs(i, parent[i]))
             break;
     }
 

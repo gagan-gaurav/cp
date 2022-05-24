@@ -60,7 +60,7 @@ Node *leftRotation(Node *node){
 }
 
 Node *insert(Node* node, int key){
-	if(node == NULL) return 0;
+	if(node == NULL) return newNode(key);
 	
 	if(key < node -> key){
 		node -> left = insert(node -> left, key);

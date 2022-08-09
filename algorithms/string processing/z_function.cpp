@@ -17,14 +17,14 @@ void z_func(string s){
     int n = (int)s.size();
     z.assign(n, 0);
     for (int i = 1, l = 0, r = 0; i < n; ++i) {
-        cout << i << ' ' << l << ' ' << r <<' ';
+        // cout << i << ' ' << l << ' ' << r <<' ';
         if (i <= r)
             z[i] = min (r - i + 1, z[i - l]);
         while (i + z[i] < n && s[z[i]] == s[i + z[i]])
             ++z[i];
         if (i + z[i] - 1 > r)
             l = i, r = i + z[i] - 1;
-        cout << z[i] << '\n';
+        // cout << z[i] << '\n';
     }
 } 
 
@@ -33,6 +33,5 @@ int main(){
     string s = "ababababab";
     z_func(s); 
     for(auto i : z) cout << i << ' ';
-
     return 0;
 }

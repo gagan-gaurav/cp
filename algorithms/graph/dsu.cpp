@@ -7,7 +7,7 @@ struct dsu{
 
 	// get representive component (uses path compression)
 	int get(int x) {
-		return e[x] < 0 ? x : get(e[x]);
+		return e[x] < 0 ? x : e[x] = get(e[x]);
 	}
 
 	bool same_set(int a, int b){
@@ -20,12 +20,14 @@ struct dsu{
 
 	// union by size
 	bool merge(int x, int y){
-		x = get(x), y = get(y);
-		if(x == y) return false;
-		if(e[x] > e[y]) swap(x , y);
-		e[x] += e[y];
-		e[y] = x;
-		return true;
+		
 	}
 
 };
+
+int main(){
+	ios_base ::sync_with_stdio(false);
+	cin.tie(0);
+	
+	return 0;
+}
